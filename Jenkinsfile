@@ -14,7 +14,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v2/', 'dockerhub') {
+     docker.withRegistry('https://index.docker.io/v2/', 'persildocker') {
        def app = docker.build("persildocker/udemy-jenkins${commit_id}", '.').push()
      }
    }
